@@ -1,0 +1,58 @@
+
+<div class="container" >
+    <div class="jumbotron">
+    <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" nonvalidate>  
+        <h2 style="color: RED;">Add Product</h2>
+            <!-- <div *ngIf="id.errors?.['required'] && id.touched"> Pls enter id </div> 
+            <div *ngIf="id.errors?.['minlength'] && id.touched"> pls enter atleast 3 digit</div> 
+        Id:<input type="text" ngModel name="id" #id="ngModel" required minlength="1" maxlength="5" >
+         <br>
+   -->
+        <div *ngIf="name.errors?.['required'] && name.touched"> Pls enter Name here</div> 
+        <div *ngIf="name.errors?.['minlength'] && name.touched"> pls enter atleast 4 charectors</div> 
+        Name:<input type="text" ngModel name="name" #name="ngModel"  required minlength="4" maxlength="100" >
+        <br>
+  
+        <div *ngIf="price.errors?.['required'] && price.touched"> Pls enter your price here</div> 
+        <div *ngIf="price.errors?.['minlength'] && price.touched"> pls enter price charectors</div> 
+        Price:<input type="text" ngModel name="price" #price="ngModel" required minlength="1" maxlength="20" >
+        <br>
+        <!-- <div *ngIf="quantity.errors?.['required'] && quantity.touched"> Pls enter your quantity here</div> 
+        <div *ngIf="quantity.errors?.['minlength'] && quantity.touched"> pls enter price charectors</div>  -->
+        Quantity:<input type="text" ngModel name="quantity" #price="ngModel" required minlength="1" maxlength="20" >
+        <br>
+        <!-- <div *ngIf="image.errors?.['required'] && image.touched"> Pls enter your quantity here</div> 
+        <div *ngIf="image.errors?.['minlength'] && image.touched"> pls enter price charectors</div> 
+        Upload:<input type="text" ngModel name="image" #image="ngModel" required minlength="3" maxlength="12" >
+        <br><br> -->
+       
+<!-- 
+        Upload:
+  <input type="file" id="myFile" ngModel name="image" #image="ngModel"><br> -->
+  img_path:
+  <input type="text" id="img_path" ngModel name="image" #image="ngModel"><br>
+  
+
+<div *ngIf="dsc.errors?.['required'] && dsc.touched"> Pls enter your dsc here</div> 
+<div *ngIf="dsc.errors?.['minlength'] && dsc.touched"> pls enter price charectors</div> 
+        Dsc:<input type="text" ngModel name="dsc" #dsc="ngModel" required minlength="3" maxlength="100" >
+        <br>
+        Pcid:<input type="text" ngModel name="pcid" #pcid="ngModel" required minlength="1" maxlength="12" >
+        <br>
+  
+       
+       
+       
+        <div *ngIf="brand.errors?.['required'] && brand.touched"> Pls enter your dsc here</div> 
+<div *ngIf="brand.errors?.['minlength'] && brand.touched"> pls enter price charectors</div> 
+        Brand:<input type="text" ngModel name="brand" #brand="ngModel"><br>
+  
+       
+  
+        <button type="submit" [disabled]="regForm.invalid">ADD</button>
+       
+    </form>
+  </div>
+</div>
+  <button type="button" routerLink="/Admin" class="btn btn-dark">Back</button>
+  

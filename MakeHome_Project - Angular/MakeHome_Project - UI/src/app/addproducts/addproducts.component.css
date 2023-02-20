@@ -1,0 +1,33 @@
+form{
+    width: 250px;
+    height: 500px;
+    background: linear-gradient(to top,rgba(0, 0, 0,0.8)50%,rgba(0,0,0,0.8)50%,);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 25px;
+    position: absolute;
+    font-style: italic;
+  
+    /* transform: translate(-50%,-50%);
+    background-color: rgba(240, 226, 123, 0.708);
+    */
+    border-radius: 25px;
+    box-shadow: 0 10px rgba(182, 182, 157, 0.682);
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    box-shadow: 0 10px rgb(110,110,2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'poppins', sans-serif;
+}
+.body{
+      background-color: darkgrey;
+}
+
+ .container{
+    background-image:('assets/ga.jpg') ;
+ }

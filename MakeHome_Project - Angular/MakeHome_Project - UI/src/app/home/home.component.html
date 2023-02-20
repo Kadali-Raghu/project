@@ -1,0 +1,221 @@
+<router-outlet></router-outlet>
+<header>
+   
+  <div class="navbar navbar-dark btn-warning shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <i style="font-size: 40px;" class="fa fa-home">&nbsp;
+              
+          </i>
+          <strong style="font-size: 30px;">MakeHome</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+              
+            </div>
+          <span class="fa fa-search search-icon fa-2x" style="color: black;"></span>
+
+
+      </div>
+      <button routerLink="/login" class="btn btn-success">
+          <i style="font-size: 30px;" class="fa fa-cart-plus"></i>
+          
+          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      </button>
+      <button routerLink="/login" class="btn btn-success">
+        <i style="font-size: 30px;" class="fa fa-sign-in"></i>
+        
+        <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+    <button routerLink="/userRegister" class="btn btn-warning">
+        <i style="font-size: 30px;" class="fa fa-user-plus"></i>
+        
+        <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+  </div>
+  
+</header>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1708/ylivdesign170830673/84615046-construction-material-icon-set-simple-style.jpg" alt="not found">
+              <h6>All Products</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+        
+              <img src="https://cdn1.iconfinder.com/data/icons/construction-glyph-black/2048/392_-_Cement_Bag-512.png" alt="not found">
+              <h6>CEMENT</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/steel-2118770-1783029.png" alt="not found">
+              <h6>STEEL</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img style="width: 62px; margin-top: 5px;" src="https://www.clipartmax.com/png/middle/290-2902347_image-icon-stone-fortnite-wiki-fandom-powered-by-wikia-fortnite-stone.png" alt="not found">
+              <h6>BRICKS</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+            <img src="https://thumbs.dreamstime.com/b/vector-sand-icon-simple-flat-style-pile-isolated-white-background-yellow-dune-desert-beach-construction-site-162616213.jpg" alt="not found">
+            <h6>SAND</h6>
+        </a>
+    </div>
+  </div>
+</div>
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Check_Price......jpg" alt="pricecheck" title="pricecheck" />
+
+    </ng-template>  
+    <ng-template carouselSlide> <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Discover_Guranteed_web...jpg" alt="Discover the Lowest price here" title="Discover the Lowest price here" />
+    </ng-template>  
+    <ng-template carouselSlide><img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Buy_Online_Save_Money_..jpg" alt="buy online save money" title="buy online save money" />
+
+    </ng-template>  
+  </owl-carousel-o>
+ 
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'name' ">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="item.name">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.dsc}}</p>
+                <p><strong>Price:</strong> Rs.{{item.price}}</p>
+                <button class="btn btn-warning" routerLink="/login">Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+<!-- ><div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid content-wrap2"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1501124947258"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"> <div id="sw_brand_sw-brand-11507690631" class="responsive-slider sw-brand-container-slider  loading clearfix" data-lg="8" data-md="6" data-sm="4" data-xs="2" data-mobile="1" data-speed="1000" data-scroll="1" data-interval="5000" data-autoplay="false"> -->
+    <div class="card-top container-fluid">
+        <div class="container d-flex">
+        
+    <div class="item1">
+   
+    <a href="https://constructionkart.in/product_brand/acc/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/acc-logo.png" class="attachment-170x87 size-170x87" alt="acc logo" decoding="async" loading="lazy" title="acc logo" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+    <a href="https://constructionkart.in/product_brand/ashirvad/"><img width="170" height="87" src="https://constructionkart.in/wp-content/uploads/2021/05/aashirwad-brand-1.jpg" class="attachment-170x87 size-170x87" alt="aashirwad brand (1)" decoding="async" loading="lazy" title="aashirwad brand (1)" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+   
+    <a href="https://constructionkart.in/product_brand/bharathi/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Bharati_cement.jpg" class="attachment-170x87 size-170x87" alt="Bharati_cement" decoding="async" loading="lazy" title="Bharati_cement" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+    
+    
+    <a href="https://constructionkart.in/product_brand/birlaa1/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Birla_A1.jpg" class="attachment-170x87 size-170x87" alt="Birla_A1" decoding="async" loading="lazy" title="Birla_A1" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+   
+    <a href="https://constructionkart.in/product_brand/cera/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/ceram_tiles.jpg" class="attachment-170x87 size-170x87" alt="Cera Tiles" decoding="async" loading="lazy" title="Cera Tiles" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+  
+    
+    <a href="https://constructionkart.in/product_brand/deccan/"><img width="137" height="63" src="https://constructionkart.in/wp-content/uploads/2020/06/deccan.jpg" class="attachment-170x87 size-170x87" alt="deccan" decoding="async" loading="lazy" title="deccan" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+  
+    <a href="https://constructionkart.in/product_brand/greenply/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/greenplywood.jpg" class="attachment-170x87 size-170x87" alt="greenplywood" decoding="async" loading="lazy" title="greenplywood" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+  
+    <a href="https://constructionkart.in/product_brand/jsw/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/jsw-1.jpg" class="attachment-170x87 size-170x87" alt="jsw" decoding="async" loading="lazy" title="jsw" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+    
+     <a href="https://constructionkart.in/product_brand/maha/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Maha_Cement.jpg" class="attachment-170x87 size-170x87" alt="Maha_Cement" decoding="async" loading="lazy" title="Maha_Cement" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+
+    
+    <a href="https://constructionkart.in/product_brand/mayur/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/mayurplywood.jpg" class="attachment-170x87 size-170x87" alt="mayurplywood" decoding="async" loading="lazy" title="mayurplywood" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+  
+    
+    </div> </div> </div>
+
+    <footer>
+        <div class="container-fluid mt-5">
+            <div class="card  mx-5">
+                <div class="row mb-4" >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="footer-text pull-left" >
+                            <div class="d-flex">
+                                <h1 style="color: #1c030ef8;font-size: xx-large;"><img src="/assets/logo.png"
+                                        style="width: 17%;">Paradise</h1>
+                            </div>
+                            <p class="card-text" style="text-align: justify;">The world-famous Paradise brand has its origins in a small Canteen and a Café in a cinema theatre called Paradise in Secunderabad in the Year 1953.
+
+                                A small 100-seater restaurant started serving typical Hyderabadi cuisine like Biryani etc. from early Sixties. The Café also used to sell general food items to the people as a one-stop Food Store.
+                                
+                                In 1978, Mr A Hemati took complete charge of the Restaurant from his Father & Uncle and set about renovating the Restaurant to suit the changing social trends and the evolving food habits of people in India.
+                                
+                                In 1983 an Air-cooled multi-cuisine Restaurant called Paradise Persis Family Restaurant and the highly popular Paradise Takeaway came up at Secunderabad.
+                                
+                                In 1987 the Paradise theatre and consequently the Canteen was closed. But the Café and Restaurant continued its operations.</p>
+                            <div class="social mt-2 mb-3"> <a href="https://www.facebook.com/ParadiseFoodCourt"><i class="fa fa-facebook-official fa-lg"></i></a> <a href="https://www.instagram.com/paradisefoodcourt/?hl=en"><i
+                                    class="fa fa-instagram fa-lg"></i></a> <a href="https://twitter.com/paradizbiryani"><i class="fa fa-twitter fa-lg"></i></a>
+                                    <a href="https://www.linkedin.com/company/paradise-food-court/?originalSubdomain=in"> <i class="fa fa-linkedin-square fa-lg"></i></a>
+                                  </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Contact Us</h5>
+                        <ul class="footer-contact">
+                            <li class="phone"> <i class="fa fa-phone"></i> &nbsp;040-67408400</li>
+                            <li class="email"><i class="fa fa-envelope"></i> &nbsp; feedback@paradisefoodcourt.in</li>
+                        </ul>
+                    </div>
+                    <!-- <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Services</h5>
+                        <ul>
+                            <li>Online Service</li>
+                            <li>Easy Returns</li>
+                            <li>Delivery To Your Doorstep</li>
+                            <li>Support</li>
+                        </ul>
+                    </div> -->
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <h5 class="heading">Company</h5>
+                        <ul class="card-text" >
+                            <a href="https://www.paradisefoodcourt.in/aboutus.html"><li>About Us</li></a>
+                           <a href="https://www.paradisefoodcourt.in/work-philosophy.html"> <li>Philosophy</li></a>
+                            <a href="https://www.paradisefoodcourt.in/customer-care.html"><li>Contact</li></a>
+                           <a href="https://www.paradisefoodcourt.in/awards.html"> <li>Awards</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider mb-4"></div>
+                <div class="row" style="font-size:10px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="pull-left">
+                            <p><b>Copyright <i class="fa fa-copyright"></i> 2022 Paradise</b></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="pull-right mr-4 d-flex policy">
+                            <div id="l">Terms & Conditions</div>
+                            <div id="l">Privacy Policy</div>
+                            <div id="l">Cookie Policy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
